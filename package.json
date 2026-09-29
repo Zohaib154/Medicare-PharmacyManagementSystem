@@ -1,0 +1,72 @@
+{
+  "name": "medicare-system",
+  "version": "1.0.0",
+  "description": "MediCare — Advanced Pharmacy Management System",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:portable": "electron-builder --win portable",
+    "build:installer": "electron-builder --win nsis",
+    "build": "electron-builder --win portable nsis"
+  },
+  "author": "Zohaib Asghar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.medicare.pharmacysystem",
+    "productName": "MediCare",
+    "copyright": "Copyright © 2026 MediCare Pharmacy System",
+    "icon": "build/icon.ico",
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "MediCare-Portable.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "artifactName": "MediCare-Setup.exe",
+      "shortcutName": "MediCare Pharmacy System"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "server.js",
+      "backend/**/*",
+      "static/**/*",
+      "build/icon.png",
+      "!node_modules/.cache/**/*"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    }
+  }
+}

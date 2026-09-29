@@ -1,0 +1,786 @@
+{
+  "format": "MEDICARE_MBAK_V1",
+  "exportDate": "2026-09-29T14:49:25.636Z",
+  "version": "1.0.0",
+  "metadata": {
+    "appName": "MediCare Pharmacy Management System",
+    "databaseEngine": "JSON Document Store",
+    "recordCounts": {
+      "users": 3,
+      "drugs": 8,
+      "inventoryBatches": 8,
+      "patients": 4,
+      "suppliers": 4,
+      "prescriptions": 3,
+      "purchaseOrders": 2,
+      "salesTransactions": 3
+    }
+  },
+  "data": {
+    "users": [
+      {
+        "userId": 1,
+        "username": "admin",
+        "passwordHash": "$2a$10$NUY5QxvoZLOr8GEv8NwPluZNmiQfZqepkD/3c5H7s2sz9N17QDm0y",
+        "fullName": "System Administrator",
+        "email": "admin@medicare.local",
+        "contactNumber": "+92 300 1234567",
+        "role": "ROLE_ADMIN",
+        "roles": [
+          "ROLE_ADMIN",
+          "ROLE_PHARMACIST",
+          "ROLE_STORE_MANAGER"
+        ],
+        "isActive": true,
+        "createdAt": "2026-07-31T14:49:25.647Z"
+      },
+      {
+        "userId": 2,
+        "username": "pharmacist",
+        "passwordHash": "$2a$10$NUY5QxvoZLOr8GEv8NwPluyAKuHBgNrDPMeclxMZVCGSXFDrYs7rS",
+        "fullName": "Dr. Ahmed Hassan",
+        "email": "ahmed@medicare.local",
+        "contactNumber": "+92 321 5566778",
+        "role": "ROLE_PHARMACIST",
+        "roles": [
+          "ROLE_PHARMACIST"
+        ],
+        "licenseNumber": "PH-2024-00142",
+        "isActive": true,
+        "createdAt": "2026-08-15T14:49:25.647Z"
+      },
+      {
+        "userId": 3,
+        "username": "cashier",
+        "passwordHash": "$2a$10$NUY5QxvoZLOr8GEv8NwPluvN.vJsOJGJAxdatooRlA.grtq5ssbga",
+        "fullName": "Ali Cashier",
+        "email": "cashier@medicare.local",
+        "contactNumber": "+92 333 9988776",
+        "role": "ROLE_CASHIER",
+        "roles": [
+          "ROLE_CASHIER"
+        ],
+        "isActive": true,
+        "createdAt": "2026-08-30T14:49:25.647Z"
+      }
+    ],
+    "drugs": [
+      {
+        "drugId": 1,
+        "drugName": "Panadol Extra 500mg/65mg",
+        "genericName": "Paracetamol + Caffeine",
+        "category": "Analgesics & Antipyretics",
+        "dosageForm": "Tablet",
+        "strength": "500mg / 65mg",
+        "manufacturer": "GSK Pakistan Ltd",
+        "unitPrice": 3.5,
+        "mrp": 5,
+        "gstPercent": 0,
+        "scheduleType": "OTC",
+        "description": "Fast acting relief for severe headache, migraine, toothache and body aches.",
+        "isActive": true,
+        "createdAt": "2026-07-31T14:49:25.647Z"
+      },
+      {
+        "drugId": 2,
+        "drugName": "Augmentin 625mg",
+        "genericName": "Amoxicillin + Clavulanic Acid",
+        "category": "Antibiotics",
+        "dosageForm": "Tablet",
+        "strength": "625mg",
+        "manufacturer": "GSK Pakistan Ltd",
+        "unitPrice": 22,
+        "mrp": 32,
+        "gstPercent": 0,
+        "scheduleType": "Prescription Only",
+        "description": "Broad spectrum antibacterial for bacterial infections of respiratory tract and skin.",
+        "isActive": true,
+        "createdAt": "2026-07-31T14:49:25.647Z"
+      },
+      {
+        "drugId": 3,
+        "drugName": "Brufen 400mg",
+        "genericName": "Ibuprofen",
+        "category": "NSAIDs",
+        "dosageForm": "Tablet",
+        "strength": "400mg",
+        "manufacturer": "Abbott Laboratories",
+        "unitPrice": 4,
+        "mrp": 6.5,
+        "gstPercent": 0,
+        "scheduleType": "OTC",
+        "description": "Anti-inflammatory pain reliever for arthritis, dental pain, fever.",
+        "isActive": true,
+        "createdAt": "2026-07-31T14:49:25.647Z"
+      },
+      {
+        "drugId": 4,
+        "drugName": "Risek 40mg",
+        "genericName": "Omeprazole",
+        "category": "Gastrointestinal",
+        "dosageForm": "Capsule",
+        "strength": "40mg",
+        "manufacturer": "Getz Pharma",
+        "unitPrice": 25,
+        "mrp": 35,
+        "gstPercent": 0,
+        "scheduleType": "Prescription Only",
+        "description": "Proton pump inhibitor for GERD, acid reflux, and gastric ulcers.",
+        "isActive": true,
+        "createdAt": "2026-08-10T14:49:25.647Z"
+      },
+      {
+        "drugId": 5,
+        "drugName": "Flagyl 400mg",
+        "genericName": "Metronidazole",
+        "category": "Antiprotozoal / Antibiotic",
+        "dosageForm": "Tablet",
+        "strength": "400mg",
+        "manufacturer": "Searle Company Limited",
+        "unitPrice": 3.2,
+        "mrp": 5,
+        "gstPercent": 0,
+        "scheduleType": "Prescription Only",
+        "description": "Treatment for amoebiasis, giardiasis, and anaerobic bacterial infections.",
+        "isActive": true,
+        "createdAt": "2026-08-10T14:49:25.647Z"
+      },
+      {
+        "drugId": 6,
+        "drugName": "Ventolin Inhaler 100mcg",
+        "genericName": "Salbutamol",
+        "category": "Respiratory",
+        "dosageForm": "Inhaler",
+        "strength": "100mcg (200 doses)",
+        "manufacturer": "GSK Pakistan Ltd",
+        "unitPrice": 280,
+        "mrp": 375,
+        "gstPercent": 0,
+        "scheduleType": "Prescription Only",
+        "description": "Fast relief bronchodilator for acute asthma and bronchospasm.",
+        "isActive": true,
+        "createdAt": "2026-08-20T14:49:25.647Z"
+      },
+      {
+        "drugId": 7,
+        "drugName": "Sancos Cough Syrup 120ml",
+        "genericName": "Dextromethorphan + Pseudoephedrine",
+        "category": "Cough & Cold",
+        "dosageForm": "Syrup",
+        "strength": "120ml",
+        "manufacturer": "Abbott Laboratories",
+        "unitPrice": 95,
+        "mrp": 130,
+        "gstPercent": 0,
+        "scheduleType": "OTC",
+        "description": "Relief of dry irritating cough, nasal and sinus congestion.",
+        "isActive": true,
+        "createdAt": "2026-08-20T14:49:25.647Z"
+      },
+      {
+        "drugId": 8,
+        "drugName": "Polyfax Skin Ointment 20g",
+        "genericName": "Polymyxin B + Bacitracin",
+        "category": "Dermatological",
+        "dosageForm": "Ointment",
+        "strength": "20g",
+        "manufacturer": "GSK Pakistan Ltd",
+        "unitPrice": 60,
+        "mrp": 85,
+        "gstPercent": 0,
+        "scheduleType": "OTC",
+        "description": "Topical antibacterial ointment for cuts, burns and skin infections.",
+        "isActive": true,
+        "createdAt": "2026-08-30T14:49:25.647Z"
+      }
+    ],
+    "inventory": [
+      {
+        "inventoryId": 1,
+        "drugId": 1,
+        "drugName": "Panadol Extra 500mg/65mg",
+        "supplierId": 1,
+        "batchNumber": "PAN-2024-B1",
+        "quantityInStock": 450,
+        "reorderLevel": 100,
+        "manufacturingDate": "2024-03-01",
+        "expiryDate": "2028-03-02",
+        "purchasePrice": 3.5,
+        "sellingPrice": 5,
+        "storageLocation": "Shelf A-1",
+        "stockStatus": "IN_STOCK"
+      },
+      {
+        "inventoryId": 2,
+        "drugId": 2,
+        "drugName": "Augmentin 625mg",
+        "supplierId": 1,
+        "batchNumber": "AUG-2024-C2",
+        "quantityInStock": 80,
+        "reorderLevel": 30,
+        "manufacturingDate": "2024-04-15",
+        "expiryDate": "2027-10-14",
+        "purchasePrice": 22,
+        "sellingPrice": 32,
+        "storageLocation": "Shelf B-2",
+        "stockStatus": "IN_STOCK"
+      },
+      {
+        "inventoryId": 3,
+        "drugId": 3,
+        "drugName": "Brufen 400mg",
+        "supplierId": 2,
+        "batchNumber": "BRU-2024-09",
+        "quantityInStock": 15,
+        "reorderLevel": 25,
+        "manufacturingDate": "2024-01-10",
+        "expiryDate": "2026-10-19",
+        "purchasePrice": 4,
+        "sellingPrice": 6.5,
+        "storageLocation": "Shelf A-3",
+        "stockStatus": "LOW_STOCK"
+      },
+      {
+        "inventoryId": 4,
+        "drugId": 4,
+        "drugName": "Risek 40mg",
+        "supplierId": 3,
+        "batchNumber": "RSK-2024-88",
+        "quantityInStock": 120,
+        "reorderLevel": 20,
+        "manufacturingDate": "2024-05-01",
+        "expiryDate": "2028-05-21",
+        "purchasePrice": 25,
+        "sellingPrice": 35,
+        "storageLocation": "Shelf C-1",
+        "stockStatus": "IN_STOCK"
+      },
+      {
+        "inventoryId": 5,
+        "drugId": 5,
+        "drugName": "Flagyl 400mg",
+        "supplierId": 4,
+        "batchNumber": "FLG-2024-01",
+        "quantityInStock": 0,
+        "reorderLevel": 50,
+        "manufacturingDate": "2023-11-20",
+        "expiryDate": "2027-07-26",
+        "purchasePrice": 3.2,
+        "sellingPrice": 5,
+        "storageLocation": "Shelf B-1",
+        "stockStatus": "OUT_OF_STOCK"
+      },
+      {
+        "inventoryId": 6,
+        "drugId": 6,
+        "drugName": "Ventolin Inhaler 100mcg",
+        "supplierId": 1,
+        "batchNumber": "VEN-2024-V4",
+        "quantityInStock": 35,
+        "reorderLevel": 10,
+        "manufacturingDate": "2024-02-14",
+        "expiryDate": "2027-12-23",
+        "purchasePrice": 280,
+        "sellingPrice": 375,
+        "storageLocation": "Fridge R-1",
+        "stockStatus": "IN_STOCK"
+      },
+      {
+        "inventoryId": 7,
+        "drugId": 7,
+        "drugName": "Sancos Cough Syrup 120ml",
+        "supplierId": 2,
+        "batchNumber": "SAN-2024-12",
+        "quantityInStock": 60,
+        "reorderLevel": 15,
+        "manufacturingDate": "2024-04-01",
+        "expiryDate": "2027-11-03",
+        "purchasePrice": 95,
+        "sellingPrice": 130,
+        "storageLocation": "Shelf D-2",
+        "stockStatus": "IN_STOCK"
+      },
+      {
+        "inventoryId": 8,
+        "drugId": 8,
+        "drugName": "Polyfax Skin Ointment 20g",
+        "supplierId": 1,
+        "batchNumber": "POL-2024-K9",
+        "quantityInStock": 90,
+        "reorderLevel": 20,
+        "manufacturingDate": "2024-03-25",
+        "expiryDate": "2028-08-29",
+        "purchasePrice": 60,
+        "sellingPrice": 85,
+        "storageLocation": "Shelf E-1",
+        "stockStatus": "IN_STOCK"
+      }
+    ],
+    "patients": [
+      {
+        "patientId": 1,
+        "fullName": "Muhammad Usman",
+        "dateOfBirth": "1988-04-12",
+        "gender": "Male",
+        "contactNumber": "+92 300 1122334",
+        "email": "usman88@gmail.com",
+        "bloodGroup": "O+",
+        "allergies": "Penicillin",
+        "address": "House 14, Street 5, Cavalry Ground, Lahore",
+        "cnicNumber": "35202-1234567-1",
+        "chronicConditions": "None",
+        "currentMedications": "None",
+        "insuranceProvider": "Jubilee Life",
+        "insurancePolicyNo": "JUB-98441",
+        "isActive": true,
+        "createdAt": "2026-08-20T14:49:25.647Z"
+      },
+      {
+        "patientId": 2,
+        "fullName": "Fatima Zahra",
+        "dateOfBirth": "1995-09-23",
+        "gender": "Female",
+        "contactNumber": "+92 321 4455667",
+        "email": "fatima.zahra@outlook.com",
+        "bloodGroup": "B+",
+        "allergies": "None",
+        "address": "Flat 402, Al-Jannat Heights, Gulberg III, Lahore",
+        "cnicNumber": "35201-7654321-2",
+        "chronicConditions": "Asthma",
+        "currentMedications": "Ventolin Inhaler as needed",
+        "insuranceProvider": "EFU General",
+        "insurancePolicyNo": "EFU-2024-817",
+        "isActive": true,
+        "createdAt": "2026-08-30T14:49:25.647Z"
+      },
+      {
+        "patientId": 3,
+        "fullName": "Abdul Rehman",
+        "dateOfBirth": "1972-11-05",
+        "gender": "Male",
+        "contactNumber": "+92 333 7788990",
+        "email": "rehman.abdul72@yahoo.com",
+        "bloodGroup": "A+",
+        "allergies": "Sulfa Drugs",
+        "address": "Plot 78, Phase 4, DHA, Lahore",
+        "cnicNumber": "35200-9988112-3",
+        "chronicConditions": "Hypertension, Acid Reflux",
+        "currentMedications": "Risek 40mg daily",
+        "insuranceProvider": "Adamjee Insurance",
+        "insurancePolicyNo": "ADAM-44129",
+        "isActive": true,
+        "createdAt": "2026-09-04T14:49:25.647Z"
+      },
+      {
+        "patientId": 4,
+        "fullName": "Ayesha Khan",
+        "dateOfBirth": "2001-02-18",
+        "gender": "Female",
+        "contactNumber": "+92 345 9988776",
+        "email": "ayesha.k2001@gmail.com",
+        "bloodGroup": "AB+",
+        "allergies": "None",
+        "address": "House 11-A, Model Town, Lahore",
+        "cnicNumber": "35202-3344556-4",
+        "chronicConditions": "None",
+        "currentMedications": "None",
+        "insuranceProvider": "None",
+        "insurancePolicyNo": "",
+        "isActive": true,
+        "createdAt": "2026-09-14T14:49:25.647Z"
+      }
+    ],
+    "suppliers": [
+      {
+        "supplierId": 1,
+        "supplierName": "GSK Pakistan Ltd",
+        "contactPerson": "Tariq Mehmood",
+        "contactNumber": "+92 21 35060551",
+        "email": "orders@gsk.pk",
+        "city": "Karachi",
+        "address": "35 Dockyard Road, West Wharf, Karachi",
+        "paymentTerms": "Net 30",
+        "outstandingBalance": 12500,
+        "isActive": true
+      },
+      {
+        "supplierId": 2,
+        "supplierName": "Abbott Laboratories Pakistan",
+        "contactPerson": "Salman Khan",
+        "contactNumber": "+92 42 35789123",
+        "email": "salman.khan@abbott.pk",
+        "city": "Lahore",
+        "address": "Commercial Zone, Gulberg III, Lahore",
+        "paymentTerms": "Net 15",
+        "outstandingBalance": 0,
+        "isActive": true
+      },
+      {
+        "supplierId": 3,
+        "supplierName": "Getz Pharma (Pvt) Ltd",
+        "contactPerson": "Farhan Siddiqui",
+        "contactNumber": "+92 21 38678900",
+        "email": "supply@getzpharma.pk",
+        "city": "Karachi",
+        "address": "Plot 29-30/27, Korangi Industrial Area, Karachi",
+        "paymentTerms": "Net 45",
+        "outstandingBalance": 24300,
+        "isActive": true
+      },
+      {
+        "supplierId": 4,
+        "supplierName": "Searle Company Limited",
+        "contactPerson": "Mian Bilal",
+        "contactNumber": "+92 51 4433221",
+        "email": "orders@searle.pk",
+        "city": "Islamabad",
+        "address": "Industrial Triangle, Kahuta Road, Islamabad",
+        "paymentTerms": "Net 30",
+        "outstandingBalance": 8200,
+        "isActive": true
+      }
+    ],
+    "prescriptions": [
+      {
+        "prescriptionId": 1,
+        "rxNumber": "RX-1001",
+        "patientId": 1,
+        "patientName": "Muhammad Usman",
+        "doctorName": "Dr. Tariq Mahmood (ENT Specialist)",
+        "doctorLicense": "PMC-29481-P",
+        "diagnosis": "Acute bacterial pharyngitis & fever",
+        "prescriptionDate": "2026-09-26T14:49:25.647Z",
+        "issueDate": "2026-09-26T14:49:25.647Z",
+        "status": "DISPENSED",
+        "dispensedDate": "2026-09-26T14:49:25.647Z",
+        "items": [
+          {
+            "drugId": 2,
+            "drugName": "Augmentin 625mg",
+            "dosage": "1 tablet twice daily",
+            "frequency": "Every 12 hours",
+            "duration": "7 days",
+            "quantity": 14,
+            "instructions": "Take after meals"
+          },
+          {
+            "drugId": 1,
+            "drugName": "Panadol Extra 500mg/65mg",
+            "dosage": "1 tablet thrice daily",
+            "frequency": "Every 8 hours",
+            "duration": "3 days",
+            "quantity": 10,
+            "instructions": "Take for fever and body ache"
+          }
+        ]
+      },
+      {
+        "prescriptionId": 2,
+        "rxNumber": "RX-1002",
+        "patientId": 3,
+        "patientName": "Abdul Rehman",
+        "doctorName": "Dr. Samina Aslam (Gastroenterologist)",
+        "doctorLicense": "PMC-18230-P",
+        "diagnosis": "Gastroesophageal Reflux Disease (GERD)",
+        "prescriptionDate": "2026-09-28T14:49:25.647Z",
+        "issueDate": "2026-09-28T14:49:25.647Z",
+        "status": "PENDING",
+        "items": [
+          {
+            "drugId": 4,
+            "drugName": "Risek 40mg",
+            "dosage": "1 capsule daily",
+            "frequency": "Before breakfast",
+            "duration": "30 days",
+            "quantity": 30,
+            "instructions": "Take 30 minutes before morning meal"
+          }
+        ]
+      },
+      {
+        "prescriptionId": 3,
+        "rxNumber": "RX-1003",
+        "patientId": 2,
+        "patientName": "Fatima Zahra",
+        "doctorName": "Dr. Zafar Iqbal (Pulmonologist)",
+        "doctorLicense": "PMC-33129-P",
+        "diagnosis": "Exercise-induced asthma & acute cough",
+        "prescriptionDate": "2026-09-29",
+        "issueDate": "2026-09-29",
+        "status": "PENDING",
+        "items": [
+          {
+            "drugId": 6,
+            "drugName": "Ventolin Inhaler 100mcg",
+            "dosage": "2 puffs as needed",
+            "frequency": "PRN",
+            "duration": "1 month",
+            "quantity": 1,
+            "instructions": "Inhale with spacer if required"
+          },
+          {
+            "drugId": 7,
+            "drugName": "Sancos Cough Syrup 120ml",
+            "dosage": "2 teaspoonfuls at bedtime",
+            "frequency": "Nightly",
+            "duration": "5 days",
+            "quantity": 1,
+            "instructions": "Shake bottle well before use"
+          }
+        ]
+      }
+    ],
+    "sales": [
+      {
+        "saleId": 1,
+        "billNumber": "BILL-20001",
+        "patientId": 1,
+        "patientName": "Muhammad Usman",
+        "patientPhone": "+92 300 1122334",
+        "doctorName": "Dr. Tariq Mahmood",
+        "saleDateTime": "2026-09-26T14:49:25.647Z",
+        "paymentMethod": "CASH",
+        "subtotal": 498,
+        "taxAmount": 0,
+        "discountAmount": 18,
+        "totalAmount": 480,
+        "cashierUsername": "cashier",
+        "items": [
+          {
+            "drugId": 2,
+            "drugName": "Augmentin 625mg",
+            "batchNumber": "AUG-2024-C2",
+            "quantity": 14,
+            "unitPrice": 32,
+            "discount": 0,
+            "taxPercent": 0,
+            "totalPrice": 448
+          },
+          {
+            "drugId": 1,
+            "drugName": "Panadol Extra 500mg/65mg",
+            "batchNumber": "PAN-2024-B1",
+            "quantity": 10,
+            "unitPrice": 5,
+            "discount": 0,
+            "taxPercent": 0,
+            "totalPrice": 50
+          }
+        ]
+      },
+      {
+        "saleId": 2,
+        "billNumber": "BILL-20002",
+        "patientId": 4,
+        "patientName": "Ayesha Khan",
+        "patientPhone": "+92 345 9988776",
+        "doctorName": "Walk-in",
+        "saleDateTime": "2026-09-28T14:49:25.647Z",
+        "paymentMethod": "CARD",
+        "subtotal": 215,
+        "taxAmount": 0,
+        "discountAmount": 0,
+        "totalAmount": 215,
+        "cashierUsername": "admin",
+        "items": [
+          {
+            "drugId": 7,
+            "drugName": "Sancos Cough Syrup 120ml",
+            "batchNumber": "SAN-2024-12",
+            "quantity": 1,
+            "unitPrice": 130,
+            "discount": 0,
+            "taxPercent": 0,
+            "totalPrice": 130
+          },
+          {
+            "drugId": 8,
+            "drugName": "Polyfax Skin Ointment 20g",
+            "batchNumber": "POL-2024-K9",
+            "quantity": 1,
+            "unitPrice": 85,
+            "discount": 0,
+            "taxPercent": 0,
+            "totalPrice": 85
+          }
+        ]
+      },
+      {
+        "saleId": 3,
+        "billNumber": "BILL-20003",
+        "patientId": null,
+        "patientName": "Walk-in Customer",
+        "patientPhone": "",
+        "doctorName": "Walk-in",
+        "saleDateTime": "2026-09-29T14:49:25.636Z",
+        "paymentMethod": "CASH",
+        "subtotal": 375,
+        "taxAmount": 0,
+        "discountAmount": 15,
+        "totalAmount": 360,
+        "cashierUsername": "cashier",
+        "items": [
+          {
+            "drugId": 6,
+            "drugName": "Ventolin Inhaler 100mcg",
+            "batchNumber": "VEN-2024-V4",
+            "quantity": 1,
+            "unitPrice": 375,
+            "discount": 15,
+            "taxPercent": 0,
+            "totalPrice": 360
+          }
+        ]
+      }
+    ],
+    "purchase_orders": [
+      {
+        "orderId": 1,
+        "poNumber": "PO-10001",
+        "supplierId": 1,
+        "supplierName": "GSK Pakistan Ltd",
+        "orderDate": "2026-09-15T14:49:25.647Z",
+        "expectedDeliveryDate": "2026-09-19T14:49:25.647Z",
+        "status": "COMPLETED",
+        "totalAmount": 18500,
+        "orderedByName": "System Administrator",
+        "notes": "Monthly replenishment order for antibiotics and inhalers.",
+        "items": [
+          {
+            "drugId": 2,
+            "drugName": "Augmentin 625mg",
+            "orderedQuantity": 200,
+            "quantity": 200,
+            "unitCost": 22,
+            "unitPrice": 22,
+            "totalPrice": 4400
+          },
+          {
+            "drugId": 1,
+            "drugName": "Panadol Extra 500mg/65mg",
+            "orderedQuantity": 1000,
+            "quantity": 1000,
+            "unitCost": 3.5,
+            "unitPrice": 3.5,
+            "totalPrice": 3500
+          },
+          {
+            "drugId": 6,
+            "drugName": "Ventolin Inhaler 100mcg",
+            "orderedQuantity": 35,
+            "quantity": 35,
+            "unitCost": 280,
+            "unitPrice": 280,
+            "totalPrice": 9800
+          },
+          {
+            "drugId": 8,
+            "drugName": "Polyfax Skin Ointment 20g",
+            "orderedQuantity": 100,
+            "quantity": 100,
+            "unitCost": 60,
+            "unitPrice": 60,
+            "totalPrice": 6000
+          }
+        ]
+      },
+      {
+        "orderId": 2,
+        "poNumber": "PO-10002",
+        "supplierId": 3,
+        "supplierName": "Getz Pharma (Pvt) Ltd",
+        "orderDate": "2026-09-24T14:49:25.647Z",
+        "expectedDeliveryDate": "2026-10-01",
+        "status": "PENDING",
+        "totalAmount": 12500,
+        "orderedByName": "System Administrator",
+        "notes": "Emergency reorder of Risek 40mg and cardiac meds.",
+        "items": [
+          {
+            "drugId": 4,
+            "drugName": "Risek 40mg",
+            "orderedQuantity": 500,
+            "quantity": 500,
+            "unitCost": 25,
+            "unitPrice": 25,
+            "totalPrice": 12500
+          }
+        ]
+      }
+    ],
+    "supplier_payments": [
+      {
+        "paymentId": 1,
+        "poId": 1,
+        "poNumber": "PO-10001",
+        "supplierId": 1,
+        "supplierName": "GSK Pakistan Ltd",
+        "amount": 6000,
+        "paymentDate": "2026-09-21T14:49:25.647Z",
+        "paymentMethod": "Bank Transfer",
+        "referenceNumber": "FT-2024-99881",
+        "notes": "Partial payment against PO-10001"
+      }
+    ],
+    "stock_archives": [
+      {
+        "archiveId": 1,
+        "inventoryId": 3,
+        "drugName": "Brufen 400mg",
+        "batchNumber": "BRU-2024-09",
+        "quantityBeforeRemoval": 25,
+        "quantityRemoved": 10,
+        "quantityAfterRemoval": 15,
+        "lossValue": 40,
+        "reason": "Damaged in transit",
+        "notes": "Outer packaging crushed during warehouse handling",
+        "removalDate": "2026-09-19T14:49:25.647Z",
+        "removedBy": "admin",
+        "removedAt": "2026-09-19T14:49:25.647Z"
+      }
+    ],
+    "audit_logs": [
+      {
+        "logId": 1,
+        "action": "SYSTEM_BACKUP_GENERATE",
+        "module": "Backup",
+        "details": "Comprehensive demo database generated with complete catalog, inventory, and sales history.",
+        "performedBy": "admin",
+        "timestamp": "2026-09-29T14:49:25.636Z"
+      },
+      {
+        "logId": 2,
+        "action": "SALE_COMPLETE",
+        "module": "POS",
+        "details": "Processed invoice BILL-20003 for PKR 360.00",
+        "performedBy": "cashier",
+        "timestamp": "2026-09-29T14:49:25.636Z"
+      }
+    ],
+    "settings": {
+      "pharmacyName": "MediCare Pharmacy & Wellness",
+      "address": "Plot 42-B, Main Boulevard, Phase 5, DHA, Lahore",
+      "phone": "+92 42 35741234",
+      "email": "contact@medicarepharmacy.pk",
+      "gstNumber": "GST-PAK-98765432",
+      "invoiceFooter": "Thank you for choosing MediCare Pharmacy! Wishing you good health and a quick recovery.",
+      "currencySymbol": "PKR",
+      "taxLabel": "GST",
+      "enableBackupEncryption": false,
+      "backupEncryptionPassword": ""
+    },
+    "counters": {
+      "user": 4,
+      "drug": 9,
+      "inventory": 9,
+      "patient": 5,
+      "supplier": 5,
+      "prescription": 1004,
+      "bill": 20004,
+      "po": 10003,
+      "payment": 2,
+      "archive": 2,
+      "audit": 3
+    }
+  }
+}
